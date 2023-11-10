@@ -3,6 +3,6 @@
 <table>
   <tr>
     <td>You are visitor</td>
-    <td><img src="https://profile-counter.glitch.me/paradiseduo/count.svg" alt="" /></td>
+    <td><img src="https://profile-counter.glitch.me/wayneclub/count.svg" alt="" /></td>
   </tr>
 </table>
