@@ -1,10 +1,23 @@
 'use strict';
 // Each row: English source, Traditional Chinese, Simplified Chinese.
 const translations = [
+["Privacy & analytics", "隱私與分析", "隐私与分析"],
+["Language and appearance preferences are stored only on this device.", "語言與外觀偏好只儲存在這台裝置。", "语言与外观偏好只保存在这台设备。"],
+["With your permission, Google Analytics measures page visits and portfolio interactions. Advertising features are disabled. Query strings, email addresses and form contents are not sent as event data.", "經你同意後，Google Analytics 會記錄頁面瀏覽與作品互動，廣告功能關閉。網址查詢參數、電子郵件地址及表單內容不會作為事件資料傳送。", "经你同意后，Google Analytics 会记录页面浏览与作品互动，广告功能关闭。网址查询参数、电子邮件地址及表单内容不会作为事件数据发送。"],
+["This website has no contact form. Email links open your email application. The hosting and security providers may process technical request logs for delivery and abuse prevention.", "本站沒有聯絡表單，電子郵件連結會開啟你的郵件程式。主機與安全服務商可能處理技術請求紀錄，以提供網站及防止濫用。", "本站没有联系表单，电子邮件链接会打开你的邮件程序。主机与安全服务商可能处理技术请求记录，以提供网站及防止滥用。"],
+["Analytics cookies", "分析 Cookie", "分析 Cookie"],
+["Do not allow", "不允許", "不允许"],
+["Allow analytics", "允許分析", "允许分析"],
+["Analytics is not currently enabled.", "目前尚未啟用分析追蹤。", "目前尚未启用分析跟踪。"],
+["You can change this choice at any time.", "你可以隨時更改選擇。", "你可以随时更改选择。"],
+["Allow optional analytics to help improve Wayne Club?", "允許非必要的分析功能，協助改善 Wayne Club？", "允许非必要的分析功能，协助改善 Wayne Club？"],
+["No thanks", "不用，謝謝", "不用，谢谢"],
+["Analytics choice", "分析偏好", "分析偏好"],
+["Languages", "語言版本", "语言版本"],
 ['Wayne Club home','Wayne Club 首頁','Wayne Club 首页'],['Wayne Club logo','Wayne Club 標誌','Wayne Club 标志'],
 ['Learning','學習','学习'],
 ['Skip to content','跳至主要內容','跳至主要内容'],['Work','作品','作品'],['Experience','經歷','经历'],['About','關於','关于'],['Let’s talk','聊聊合作','聊聊合作'],
-['ENGINEER · BUILDER · PROBLEM SOLVER','工程師 · 創作者 · 問題解決者','工程师 · 创作者 · 问题解决者'],['Hi, I’m Wayne Wei.','嗨，我是 Wayne Wei。','嗨，我是 Wayne Wei。'],['Good software.','好的軟體，','好的软件，'],['Built to last.','經得起考驗。','经得起考验。'],['I build the systems behind the experience.','打造出色體驗背後的可靠系統。','打造出色体验背后的可靠系统。'],['Backend engineering, cloud infrastructure, and AI — with reliability at the core.','專注後端工程、雲端架構與 AI，讓穩定可靠成為每個產品的基礎。','专注后端工程、云端架构与 AI，让稳定可靠成为每个产品的基础。'],['Explore my work','探索作品','探索作品'],['View résumé','查看履歷','查看简历'],['Python & Java','Python 與 Java','Python 与 Java'],['From Taipei to Los Angeles','從台北到洛杉磯','从台北到洛杉矶'],['THE PERSON BEHIND THE CODE','程式碼背後的我','代码背后的我'],['Backend Software Engineer','後端軟體工程師','后端软件工程师'],['Focus','專注領域','专注领域'],['Systems that scale','可擴展的系統','可扩展的系统'],['Education','學歷','学历'],['MS Computer Science, USC','南加州大學・電腦科學碩士','南加州大学・计算机科学硕士'],['Elsewhere','其他連結','其他链接'],['Engineering with intention','讓每個設計都有意義','让每个设计都有意义'],['From architecture to production','從架構設計到正式上線','从架构设计到正式上线'],
+['ENGINEER · BUILDER · PROBLEM SOLVER','工程師 · 創作者 · 問題解決者','工程师 · 创作者 · 问题解决者'],['Hi, I’m Wayne Wei.','嗨，我是 Wayne Wei。','嗨，我是 Wayne Wei。'],['Backend engineering.','專注後端，','专注后端，'],['Built with care.','用心打造。','用心打造。'],['I build the systems behind the experience.','打造出色體驗背後的可靠系統。','打造出色体验背后的可靠系统。'],['Backend engineering, cloud infrastructure, and AI — with reliability at the core.','專注後端工程、雲端架構與 AI，讓穩定可靠成為每個產品的基礎。','专注后端工程、云端架构与 AI，让稳定可靠成为每个产品的基础。'],['Explore my work','探索作品','探索作品'],['View résumé','查看履歷','查看简历'],['Python & Java','Python 與 Java','Python 与 Java'],['From Taipei to Los Angeles','從台北到洛杉磯','从台北到洛杉矶'],['THE PERSON BEHIND THE CODE','程式碼背後的我','代码背后的我'],['Backend Software Engineer','後端軟體工程師','后端软件工程师'],['Focus','專注領域','专注领域'],['Systems that scale','可擴展的系統','可扩展的系统'],['Education','學歷','学历'],['MS Computer Science, USC','南加州大學・電腦科學碩士','南加州大学・计算机科学硕士'],['Elsewhere','其他連結','其他链接'],['Engineering with intention','讓每個設計都有意義','让每个设计都有意义'],['From architecture to production','從架構設計到正式上線','从架构设计到正式上线'],
 ['years of engineering experience','年軟體工程經驗','年软件工程经验'],['users on banking systems supported','銀行系統服務使用者','银行系统服务用户'],['stars on Subtitle-Downloader','Subtitle-Downloader 星標','Subtitle-Downloader 星标'],['lower integration maintenance costs','整合維護成本降低','集成维护成本降低'],
 ['01 / SELECTED WORK','01 / 精選作品','01 / 精选作品'],['Useful ideas.','實用的想法，','实用的想法，'],['Made real.','化為真實。','化为真实。'],['Open-source tools and personal projects.','開源工具與個人專案，','开源工具与个人项目，'],['Built around problems worth solving.','從值得解決的問題出發。','从值得解决的问题出发。'],['OPEN SOURCE / PYTHON','開源工具 / PYTHON','开源工具 / PYTHON'],['OPEN SOURCE / CSS','開源工具 / CSS','开源工具 / CSS'],['LEARNING / TYPESCRIPT','學習應用 / TYPESCRIPT','学习应用 / TYPESCRIPT'],['INSIGHTS / PYTHON','評論洞察 / PYTHON','评论洞察 / PYTHON'],['A WORLD OF STORIES','每個故事，都值得被理解','每个故事，都值得被理解'],['Beyond language.','跨越語言的界線。','跨越语言的界线。'],['讓故事，跨越語言。','讓故事，跨越語言。','让故事，跨越语言。'],['400+ GitHub stars','400+ GitHub 星標','400+ GitHub 星标'],['A Python tool that brings streaming subtitles together, with subtitle processing and dual-subtitle support.','整合串流平台字幕的 Python 工具，支援字幕處理與雙語字幕。','整合流媒体平台字幕的 Python 工具，支持字幕处理与双语字幕。'],['Automation','自動化','自动化'],['Media tooling','影音工具','影音工具'],['A desire to know. A reason to build.','因為好奇，所以創造。','因为好奇，所以创造。'],['A custom dictionary experience with dark mode and offline pronunciation.','自訂 Apple 字典體驗，支援深色模式與離線發音。','自定义 Apple 字典体验，支持深色模式与离线发音。'],['Offline-first','離線優先','离线优先'],['Bar exam practice with custom MBE-style question sets, timed sessions, and explanation reviews.','律師考試練習工具，可自訂 MBE 題組、進行計時練習，並查看解答說明。','律师考试练习工具，可自定义 MBE 题组、进行计时练习，并查看解答说明。'],['Look beyond star ratings to understand what people care about in food, service, and the overall experience.','不只看星等，更理解人們對餐點、服務與整體體驗的真實感受。','不只看星级，更理解人们对餐点、服务与整体体验的真实感受。'],['Review insights','評論洞察','评论洞察'],['More on GitHub','更多 GitHub 作品','更多 GitHub 作品'],
 ['02 / EXPERIENCE','02 / 工作經歷','02 / 工作经历'],['Complex systems.','複雜的系統，','复杂的系统，'],['Tangible impact.','具體的改變。','具体的改变。'],['From banking at scale to production AI.','從大規模銀行系統到 AI 服務，','从大规模银行系统到 AI 服务，'],['A foundation in building for the real world.','累積經得起實際使用的工程經驗。','积累经得起实际使用的工程经验。'],['APR 2020 — JUL 2024','2020 年 4 月 — 2024 年 7 月','2020 年 4 月 — 2024 年 7 月'],['JUN — AUG 2021','2021 年 6 月 — 8 月','2021 年 6 月 — 8 月'],['JAN 2018 — MAR 2020','2018 年 1 月 — 2020 年 3 月','2018 年 1 月 — 2020 年 3 月'],['Taipei, Taiwan','台灣・台北','台湾・台北'],['Independent / Freelance','獨立接案','独立开发'],['Software Engineer','軟體工程師','软件工程师'],['Designed backend systems, integrated enterprise services, and delivered cloud infrastructure and LLM-powered chatbot services.','設計後端系統、整合企業服務，並建置雲端架構與大型語言模型聊天機器人服務。','设计后端系统、集成企业服务，并构建云端架构与大语言模型聊天机器人服务。'],['lower maintenance costs','維護成本降低','维护成本降低'],['faster end-to-end responses','端到端回應時間縮短','端到端响应时间缩短'],['LLM integrations','LLM 整合','LLM 集成'],['Taipei Beitou Health Management Hospital','臺北北投健康管理醫院','台北北投健康管理医院'],['Business Lecturer & IT Consultant','業務講師暨 IT 顧問','业务讲师兼 IT 顾问'],['Trained 20 medical staff to build an iOS bulletin board app. Designed medical-image processing APIs to reduce database load and improve loading performance.','培訓 20 位醫療人員開發 iOS 電子佈告欄，並設計醫療影像處理 API，降低資料庫負載、加快影像載入。','培训 20 位医疗人员开发 iOS 电子公告栏，并设计医疗影像处理 API，降低数据库负载、加快影像加载。'],['faster image loading','影像載入加速','影像加载加速'],['staff trained','位人員完成培訓','位人员完成培训'],['API design','API 設計','API 设计'],['E.SUN Bank','玉山銀行','玉山银行'],['Collaborated with IBM on online banking for over 2 million users. Built payment integrations and a modular Web ATM CMS, and led a six-person team on a shared foreign exchange platform.','與 IBM 合作維護服務超過 200 萬使用者的網路銀行，開發支付整合與模組化 Web ATM CMS，並帶領六人團隊打造共用外匯平台。','与 IBM 合作维护服务超过 200 万用户的网上银行，开发支付集成与模块化 Web ATM CMS，并带领六人团队打造共享外汇平台。'],['less development time for new systems','新系統開發時間縮短','新系统开发时间缩短'],['6 months','6 個月','6 个月'],['faster forex platform launch','外匯平台提早上線','外汇平台提前上线'],
@@ -13,6 +26,8 @@ const translations = [
 ];
 window.wayneI18n = (() => {
   const dictionary = new Map(translations.map(row => [row[0], row]));
+  const englishSource = new Map(translations.flatMap(row => row.map(text => [text, row[0]])));
+  const toEnglish = source => {const key=source.trim();return englishSource.has(key)?source.replace(key,englishSource.get(key)):source;};
   const textSources = new WeakMap(), attributeSources = new WeakMap();
   let language = document.documentElement.lang;
   const t = source => dictionary.get(source)?.[['en','zh-Hant','zh-Hans'].indexOf(language)] ?? source;
@@ -21,13 +36,13 @@ window.wayneI18n = (() => {
     let node;
     while ((node = walker.nextNode())) {
       if (node.parentElement.closest('script, style')) continue;
-      if (!textSources.has(node)) textSources.set(node, node.textContent);
+      if (!textSources.has(node)) textSources.set(node, toEnglish(node.textContent));
       const source = textSources.get(node), key = source.trim();
       if (dictionary.has(key)) node.textContent = source.replace(key, t(key));
     }
     const elements = [root, ...root.querySelectorAll('[aria-label], [alt]')];
     elements.forEach(el => {
-      if (!attributeSources.has(el)) attributeSources.set(el, Object.fromEntries(['aria-label','alt'].filter(a=>el.hasAttribute(a)).map(a=>[a,el.getAttribute(a)])));
+      if (!attributeSources.has(el)) attributeSources.set(el, Object.fromEntries(['aria-label','alt'].filter(a=>el.hasAttribute(a)).map(a=>[a,toEnglish(el.getAttribute(a))])));
       Object.entries(attributeSources.get(el)).forEach(([a,s]) => el.setAttribute(a,t(s)));
     });
   }

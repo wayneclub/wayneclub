@@ -1,0 +1,11 @@
+# Public portfolio pages and assets are crawlable, including by AI search bots.
+User-agent: *
+Allow: /
+Disallow: /sub/
+Disallow: /clash/
+Disallow: /rules/
+Disallow: /cdn-xhttp-mihomo.yaml
+Disallow: /cdn-xhttp-vless.txt
+Disallow: /shadowrocket.conf
+
+Sitemap: https://wayneclub.com/sitemap.xml

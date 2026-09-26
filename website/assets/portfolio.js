@@ -6,8 +6,9 @@ const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} 
 document.getElementById('year').textContent = new Date().getFullYear();
 const languageSelect = document.getElementById('language-select');
 const appearanceSelect = document.getElementById('appearance-select');
-languageSelect.value = ['en','zh-Hant','zh-Hans'].includes(prefs.read('wayne-language')) ? prefs.read('wayne-language') : 'auto';
+languageSelect.value = prefs.routeLanguage || (['en','zh-Hant','zh-Hans'].includes(prefs.read('wayne-language')) ? prefs.read('wayne-language') : 'auto');
 appearanceSelect.value = document.documentElement.dataset.appearance;
+function syncLocaleURL(lang){const path={en:'/en/','zh-Hant':'/zh-hant/','zh-Hans':'/zh-hans/',auto:'/'}[lang]||'/';history.replaceState(null,'',path+location.hash);document.querySelector('link[rel=canonical]').href='https://wayneclub.com'+path;document.querySelector('meta[property="og:url"]').content='https://wayneclub.com'+path;}
 const preferencesDialog = document.getElementById('preferences');
 function openSheet(dialog) {dialog.showModal();document.body.classList.add('sheet-open');}
 for (const dialog of document.querySelectorAll('dialog')) {
@@ -16,7 +17,7 @@ for (const dialog of document.querySelectorAll('dialog')) {
   dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 }
 document.querySelector('.settings-button').addEventListener('click',()=>openSheet(preferencesDialog));
-languageSelect.addEventListener('change',()=>{save('wayne-language',languageSelect.value);i18n.apply(languageSelect.value);});
+languageSelect.addEventListener('change',()=>{save('wayne-language',languageSelect.value);i18n.apply(languageSelect.value);syncLocaleURL(languageSelect.value);});
 appearanceSelect.addEventListener('change',()=>{save('wayne-appearance',appearanceSelect.value);document.documentElement.dataset.appearance=appearanceSelect.value;});
 window.addEventListener('languagechange',()=>{if(languageSelect.value==='auto')i18n.apply('auto');});
 window.addEventListener('storage',event=>{
@@ -47,7 +48,7 @@ document.querySelectorAll('.job').forEach((job,index)=>{
 let toastTimer;
 document.querySelector('.copy-email').addEventListener('click',async()=>{
   let message='Email address copied';
-  try{await navigator.clipboard.writeText('waynewei.tw@gmail.com');}catch{message='Could not copy. Please use the email link.';}
+  try{await navigator.clipboard.writeText('me@wayneclub.com');}catch{message='Could not copy. Please use the email link.';}
   const toast=document.querySelector('.toast');toast.textContent=i18n.t(message);toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),3500);
 });
 window.addEventListener('wayne:language',()=>{renderProject();disclosures.forEach(({button,panel})=>button.textContent=i18n.t(panel.hidden?'Show achievements':'Hide achievements'));});

@@ -1,0 +1,24 @@
+# Wayne Club
+
+> Personal portfolio of Ting-Long (Wayne) Wei, a backend software engineer focused on reliable systems, cloud infrastructure and AI service integration.
+
+## Portfolio
+- [English](https://wayneclub.com/en/): Experience, projects, education and contact information.
+- [Traditional Chinese](https://wayneclub.com/zh-hant/): 繁體中文個人網站。
+- [Simplified Chinese](https://wayneclub.com/zh-hans/): 简体中文个人网站。
+- [Resume](https://wayneclub.com/assets/Ting-Long-Wei-Resume.pdf): English resume.
+
+## Verified profiles
+- [GitHub](https://github.com/wayneclub)
+- [LinkedIn](https://www.linkedin.com/in/mrwwei/)
+
+## Contact
+- Email: me@wayneclub.com
+
+## Selected public projects
+- [Subtitle Downloader](https://github.com/wayneclub/Subtitle-Downloader): Python subtitle tooling.
+- [Apple Dictionary](https://github.com/wayneclub/Apple-Dictionary): Custom dictionary with dark mode and offline pronunciation.
+- [PassBar](https://github.com/wayneclub/PassBar): MBE-style bar exam practice.
+- [Mieru](https://github.com/wayneclub/Mieru): Insights from food and service reviews.
+
+Career information on the portfolio follows the owner-supplied resume. It is distinct from the older resume repository on GitHub.

@@ -13,9 +13,10 @@
     }
     return 'en';
   };
-  const language = read('wayne-language');
+  const routeLanguage = {'/en/':'en','/zh-hant/':'zh-Hant','/zh-hans/':'zh-Hans'}[location.pathname];
+  const language = routeLanguage || read('wayne-language');
   const appearance = read('wayne-appearance');
-  window.waynePreferences = {read, resolveLanguage};
+  window.waynePreferences = {read, resolveLanguage, routeLanguage};
   document.documentElement.lang = ['en', 'zh-Hant', 'zh-Hans'].includes(language) ? language : resolveLanguage(navigator.languages || [navigator.language]);
   document.documentElement.dataset.appearance = ['light','dark'].includes(appearance) ? appearance : 'auto';
 })();
