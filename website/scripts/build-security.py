@@ -12,6 +12,7 @@ server {
     listen 80;
     listen [::]:80;
     server_name _;
+    if ($host = www.wayneclub.com) { return 301 https://wayneclub.com$request_uri; }
     root /usr/share/nginx/html;
     index index.html;
     server_tokens off;

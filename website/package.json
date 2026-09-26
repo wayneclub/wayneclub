@@ -7,9 +7,11 @@
     "test": "node tests/browser.cjs",
     "check": "node --check assets/preferences.js && node --check assets/i18n.js && node --check assets/portfolio.js && node --check assets/analytics.js && node --check assets/analytics-config.js",
     "build": "python3 scripts/build-pages.py && python3 scripts/build-security.py",
-    "test:security": "node tests/security-seo.cjs"
+    "test:security": "node tests/security-seo.cjs",
+    "test:a11y": "node tests/accessibility.cjs"
   },
   "devDependencies": {
-    "playwright": "1.48.2"
+    "playwright": "1.48.2",
+    "axe-core": "4.13.0"
   }
 }

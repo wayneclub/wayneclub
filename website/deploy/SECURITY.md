@@ -22,7 +22,7 @@ Cloudflare may inject its own analytics beacon; the site's CSP intentionally doe
 
 ## Active Cloudflare controls (2026-09-26)
 
-Deployed and read back three zone entrypoint rulesets; `cloudflare-rules.json` records the intended configuration. Every added rule is scoped to the exact `wayneclub.com` hostname and excludes Cloudflare's `/cdn-cgi/` paths. Other subdomains and zone-wide SSL/bot settings were left unchanged.
+Deployed and read back three zone entrypoint rulesets; `cloudflare-rules.json` records the intended configuration. Every added rule is scoped to the exact `wayneclub.com` hostname and excludes Cloudflare's `/cdn-cgi/` paths. Other subdomains and zone-wide SSL settings were left unchanged. The www hostname now redirects at the origin to the canonical HTTPS apex.
 
 - Custom rules block unsupported methods (anything except GET/HEAD) and common `.env`, `.git`, WordPress and phpMyAdmin probes.
 - Cloudflare Managed Free Ruleset is deployed with its default rule actions. This is the Free baseline, not the paid OWASP ruleset or a guarantee against every SQL injection/XSS variant.
@@ -31,7 +31,7 @@ Deployed and read back three zone entrypoint rulesets; `cloudflare-rules.json` r
 
 Public homepage, Traditional/Simplified Chinese pages, robots.txt, sitemap and LinkedIn social image returned 200. Unsupported POST, `.env` and `wp-login.php` probes returned 403 at the edge. Googlebot, LinkedInBot and OAI-SearchBot user-agent probes returned 200; ClaudeBot still returned 403. These probes do not use verified crawler IPs and do not establish indexing or the exact cause of ClaudeBot's block.
 
-AI crawler configuration remains pending: the token now grants Zone WAF and Zone Settings, but `/bot_management` requires the separate Zone Bot Management permission and returns 403. Do not bypass WAF based on a claimed User-Agent or blanket-block Selenium/headless browsers.
+Bot Management access subsequently succeeded. The previous zone-wide AI crawler block was disabled (`ai_bots_protection: disabled`), and Cloudflare-managed robots.txt was disabled so the site's own robots.txt remains authoritative. Cloudflare also reset synchronized AI preferences to disabled in its response. Bot Fight Mode remained off; no global bot challenge was enabled. Googlebot, LinkedInBot, OAI-SearchBot, ClaudeBot and GPTBot user-agent probes then all returned 200. These are UA probes, not verified crawler visits. WAF and rate limits continue to apply. Original and resulting bot configurations are saved in the private snapshot above.
 
 Cloudflare Free Managed Ruleset is a suitable maintained baseline. Advanced bot scores depend on the account plan. If a real contact form is added later, use Turnstile with mandatory server-side Siteverify, per-IP and per-recipient limits, fixed recipients, strict field lengths/validation, anti-replay checks and server-side secrets. Honeypots alone are not sufficient. Parameterize any future SQL and escape untrusted output.
 
@@ -39,3 +39,11 @@ References:
 - https://developers.cloudflare.com/waf/managed-rules/
 - https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 - https://developers.google.com/analytics/devguides/collection/ga4/web
+
+## HTTPS and accessibility verification (2026-09-26)
+
+HTTP apex redirects 301 to HTTPS and preserves path/query. HTTPS www redirects 301 to HTTPS apex; HTTP www first upgrades to HTTPS www and then redirects to apex. HTTPS apex returns 200 with HSTS. The origin config handles only www canonicalization; Nginx Proxy Manager already enforces the scheme upgrade.
+
+Fixed low-contrast project-dialog badges in light appearance, made the skip-link main target explicitly focusable, prevented close controls shrinking, and ensured focused reveal content remains visible. Added axe-core WCAG A/AA checks across EN/Hant/Hans, light/dark, and mobile page plus three modal states. All 24 scans passed. Keyboard activation, Escape, focus restoration, skip link and 320px reflow were checked. Automated scans are not WCAG certification or a substitute for manual assistive-technology testing.
+
+Production GA4 was rechecked in a fresh browser: no pre-consent event, then page_view returned HTTP 204 for G-TV15PT58R3 after consent. A successful collection response does not verify account-side filters or processed reports; use Analytics Realtime to verify property ingestion, allowing for processing delay.

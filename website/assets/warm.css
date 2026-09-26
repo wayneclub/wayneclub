@@ -11,3 +11,10 @@ html[data-appearance=light] :is(.nav,.nav.scrolled,.native-sheet){background:#ff
 @media(prefers-contrast:more){:root{--muted:var(--ink);--line:currentColor}.nav,.native-sheet{background:var(--bg)!important}.project{border-width:2px}}
 
 .privacy-button{border:0;background:none;color:var(--muted);font-size:13px;padding:12px 0;min-height:44px}.consent-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:min(520px,calc(100% - 32px));z-index:40;background:var(--bg);border-radius:18px;padding:18px 22px;box-shadow:0 12px 45px #0002}.consent-banner[hidden]{display:none}.consent-banner p{font-size:15px;margin:0 0 12px}.consent-banner>div{display:flex;gap:12px}.consent-banner button{background:transparent;border:1px solid var(--line);border-radius:10px;padding:10px 15px;min-height:44px;font-size:14px;flex:1}#privacy-sheet>p{font-size:15px;line-height:1.8;color:var(--muted)}
+
+/* Shared card and dialog badges must retain contrast in both appearances. */
+.native-sheet .badge{color:var(--mint);background:transparent;border-color:var(--line);font-size:12px}
+.close-sheet{flex-shrink:0}
+.skip{z-index:110}
+.reveal:focus-within{opacity:1;transform:none}
+@media(prefers-contrast:more){html[data-appearance]{--muted:var(--ink);--line:currentColor}}
