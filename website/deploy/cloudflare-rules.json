@@ -1,0 +1,63 @@
+{
+  "http_ratelimit": {
+    "name": "Wayne Club http_ratelimit",
+    "kind": "zone",
+    "phase": "http_ratelimit",
+    "rules": [
+      {
+        "ref": "wayne_rate_limit",
+        "description": "Wayne Club: limit request bursts per IP",
+        "expression": "(http.host eq \"wayneclub.com\" and not starts_with(http.request.uri.path, \"/cdn-cgi/\"))",
+        "action": "block",
+        "ratelimit": {
+          "characteristics": [
+            "cf.colo.id",
+            "ip.src"
+          ],
+          "period": 10,
+          "requests_per_period": 120,
+          "mitigation_timeout": 10
+        },
+        "enabled": true
+      }
+    ]
+  },
+  "http_request_firewall_custom": {
+    "name": "Wayne Club http_request_firewall_custom",
+    "kind": "zone",
+    "phase": "http_request_firewall_custom",
+    "rules": [
+      {
+        "ref": "wayne_static_methods",
+        "description": "Wayne Club: reject methods unsupported by static website",
+        "expression": "(http.host eq \"wayneclub.com\" and not starts_with(http.request.uri.path, \"/cdn-cgi/\")) and not http.request.method in {\"GET\" \"HEAD\"}",
+        "action": "block",
+        "enabled": true
+      },
+      {
+        "ref": "wayne_probe_paths",
+        "description": "Wayne Club: block sensitive file and unused CMS probes",
+        "expression": "(http.host eq \"wayneclub.com\" and not starts_with(http.request.uri.path, \"/cdn-cgi/\")) and (starts_with(lower(http.request.uri.path), \"/.env\") or starts_with(lower(http.request.uri.path), \"/.git\") or starts_with(lower(http.request.uri.path), \"/wp-admin\") or lower(http.request.uri.path) in {\"/wp-login.php\" \"/xmlrpc.php\" \"/phpmyadmin\" \"/phpmyadmin/\"})",
+        "action": "block",
+        "enabled": true
+      }
+    ]
+  },
+  "http_request_firewall_managed": {
+    "name": "Wayne Club http_request_firewall_managed",
+    "kind": "zone",
+    "phase": "http_request_firewall_managed",
+    "rules": [
+      {
+        "ref": "wayne_managed_free",
+        "description": "Wayne Club: Cloudflare Managed Free Ruleset",
+        "expression": "(http.host eq \"wayneclub.com\" and not starts_with(http.request.uri.path, \"/cdn-cgi/\"))",
+        "action": "execute",
+        "action_parameters": {
+          "id": "77454fe2d30c4220b5701f6fdfb893ba"
+        },
+        "enabled": true
+      }
+    ]
+  }
+}

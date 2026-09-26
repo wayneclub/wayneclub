@@ -20,11 +20,18 @@ Custom events: `page_view`, `project_open`, `project_filter`, `resume_download`,
 
 Cloudflare may inject its own analytics beacon; the site's CSP intentionally does not allow that optional script, so it can appear as a blocked console resource. This does not block GA4 or portfolio features.
 
-## Cloudflare boundary / pending account access
+## Active Cloudflare controls (2026-09-26)
 
-The existing DNS token returned HTTP 403 for zone rulesets and security settings. No Cloudflare WAF or bot settings were changed. Googlebot, LinkedInBot and OAI-SearchBot user-agent probes returned 200; a ClaudeBot probe received 403 from Cloudflare. These tests use identifying strings, not the crawlers' verified source IPs, and do not prove future indexing.
+Deployed and read back three zone entrypoint rulesets; `cloudflare-rules.json` records the intended configuration. Every added rule is scoped to the exact `wayneclub.com` hostname and excludes Cloudflare's `/cdn-cgi/` paths. Other subdomains and zone-wide SSL/bot settings were left unchanged.
 
-With authorized zone access, inspect the matching Security Events and AI crawler controls, preserve managed exploit protections, scope any changes to `wayneclub.com` and `www.wayneclub.com`, and remove only rules that unintentionally block permitted search crawlers. Do not turn off global WAF, blanket-block Selenium/headless clients, or bypass all security for a claimed User-Agent.
+- Custom rules block unsupported methods (anything except GET/HEAD) and common `.env`, `.git`, WordPress and phpMyAdmin probes.
+- Cloudflare Managed Free Ruleset is deployed with its default rule actions. This is the Free baseline, not the paid OWASP ruleset or a guarantee against every SQL injection/XSS variant.
+- Edge rate limit: 120 requests per 10 seconds per IP and Cloudflare data center, with a 10-second block. This includes page assets; normal browsing passed. The deployed rate configuration was read back; no production burst/load test was performed.
+- Rollback: remove only the three newly created entrypoint rulesets recorded in the private snapshot `/home/ubuntu/cloudflare-website-security-20260926-134026`. Each phase was absent before deployment. Re-read current configuration before rollback to avoid removing later changes.
+
+Public homepage, Traditional/Simplified Chinese pages, robots.txt, sitemap and LinkedIn social image returned 200. Unsupported POST, `.env` and `wp-login.php` probes returned 403 at the edge. Googlebot, LinkedInBot and OAI-SearchBot user-agent probes returned 200; ClaudeBot still returned 403. These probes do not use verified crawler IPs and do not establish indexing or the exact cause of ClaudeBot's block.
+
+AI crawler configuration remains pending: the token now grants Zone WAF and Zone Settings, but `/bot_management` requires the separate Zone Bot Management permission and returns 403. Do not bypass WAF based on a claimed User-Agent or blanket-block Selenium/headless browsers.
 
 Cloudflare Free Managed Ruleset is a suitable maintained baseline. Advanced bot scores depend on the account plan. If a real contact form is added later, use Turnstile with mandatory server-side Siteverify, per-IP and per-recipient limits, fixed recipients, strict field lengths/validation, anti-replay checks and server-side secrets. Honeypots alone are not sufficient. Parameterize any future SQL and escape untrusted output.
 
