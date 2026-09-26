@@ -1,4 +1,4 @@
-# Wayne Wei — personal website
+# Wayne Club — personal website
 
 Live: https://wayneclub.com
 
@@ -13,9 +13,9 @@ A static portfolio inspired by Apple's native app materials and controls. No pro
 
 ## Content
 
-Career information follows the user-provided `Ting-Long Wei_Resume.pdf`. Project descriptions are based on public GitHub repositories. The older GitHub resume differs from this PDF and is not used for career claims. LinkedIn is linked, not scraped. The English PDF is provided as-is; page content supports all three languages. The GitHub avatar is supplied by the owner's public profile.
+Career information follows the user-provided `Ting-Long Wei_Resume.pdf`. Project descriptions are based on public GitHub repositories. The older GitHub resume differs from this PDF and is not used for career claims. LinkedIn is linked, not scraped. The English PDF is provided as-is; page content supports all three languages. The logo and wordmark are exported directly from the owner's Wayne Club.sketch vector paths, preserving Bézier curves and source transformations. Browser SVG/PNG/ICO favicons and the 180px iOS touch icon use that original mark. The theme is neutral black, white and gray.
 
-Edit `index.html` for structure/English content, `assets/i18n.js` for translations, `assets/portfolio.css` and `assets/native.css` for styles. `assets/preferences.js` resolves preferences before first paint.
+Edit `index.html` for structure/English content, `assets/i18n.js` for translations, `assets/portfolio.css`, `assets/native.css` and `assets/monochrome.css` for styles. `assets/preferences.js` resolves preferences before first paint.
 
 ## Local preview and verification
 
@@ -31,7 +31,7 @@ Tests run against `http://127.0.0.1:18940` by default. Override `BASE_URL` to ve
 
 ## Deployment
 
-The production host serves `/home/ubuntu/website` through the existing Nginx container. Copy only `index.html` and `assets/` into the web root (assets first, HTML last). Do not copy repository files, tests or configuration, and do not delete unrelated pre-existing files. Existing VPN/subscription resources must be preserved. Back up current HTML and assets before deploying.
+The production host serves `/home/ubuntu/website` through the existing Nginx container. Copy only `index.html`, `favicon.ico` and `assets/` into the web root (assets first, HTML last). Do not copy repository files, tests or configuration, and do not delete unrelated pre-existing files. Existing VPN/subscription resources must be preserved. Back up current HTML and assets before deploying.
 
 The root README in the parent repository is the GitHub profile and should not be overwritten.
 
