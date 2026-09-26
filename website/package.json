@@ -1,0 +1,8 @@
+{
+  "name": "wayneclub-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trilingual native-inspired portfolio for wayneclub.com",
+  "scripts": {"test": "node tests/browser.cjs", "check": "node --check assets/preferences.js && node --check assets/i18n.js && node --check assets/portfolio.js"},
+  "devDependencies": {"playwright": "1.48.2"}
+}
