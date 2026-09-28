@@ -1,6 +1,8 @@
 'use strict';
 // Each row: English source, Traditional Chinese, Simplified Chinese.
 const translations = [
+['Change glass lighting','切換玻璃光線','切换玻璃光线'],
+['Move to explore · Click to shift light','移動探索 · 點擊切換光線','移动探索 · 点击切换光线'],
 ["Privacy & analytics", "隱私與分析", "隐私与分析"],
 ["Language and appearance preferences are stored only on this device.", "語言與外觀偏好只儲存在這台裝置。", "语言与外观偏好只保存在这台设备。"],
 ["With your permission, Google Analytics measures page visits and portfolio interactions. Advertising features are disabled. Query strings, email addresses and form contents are not sent as event data.", "經你同意後，Google Analytics 會記錄頁面瀏覽與作品互動，廣告功能關閉。網址查詢參數、電子郵件地址及表單內容不會作為事件資料傳送。", "经你同意后，Google Analytics 会记录页面浏览与作品互动，广告功能关闭。网址查询参数、电子邮件地址及表单内容不会作为事件数据发送。"],
