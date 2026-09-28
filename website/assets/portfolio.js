@@ -9,14 +9,12 @@ const appearanceSelect = document.getElementById('appearance-select');
 languageSelect.value = prefs.routeLanguage || (['en','zh-Hant','zh-Hans'].includes(prefs.read('wayne-language')) ? prefs.read('wayne-language') : 'auto');
 appearanceSelect.value = document.documentElement.dataset.appearance;
 function syncLocaleURL(lang){const path={en:'/en/','zh-Hant':'/zh-hant/','zh-Hans':'/zh-hans/',auto:'/'}[lang]||'/';history.replaceState(null,'',path+location.hash);document.querySelector('link[rel=canonical]').href='https://wayneclub.com'+path;document.querySelector('meta[property="og:url"]').content='https://wayneclub.com'+path;}
-const preferencesDialog = document.getElementById('preferences');
 function openSheet(dialog) {dialog.showModal();document.body.classList.add('sheet-open');}
 for (const dialog of document.querySelectorAll('dialog')) {
   dialog.querySelector('.close-sheet').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('close',()=>document.body.classList.remove('sheet-open'));
   dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 }
-document.querySelector('.settings-button').addEventListener('click',()=>openSheet(preferencesDialog));
 languageSelect.addEventListener('change',()=>{save('wayne-language',languageSelect.value);i18n.apply(languageSelect.value);syncLocaleURL(languageSelect.value);});
 appearanceSelect.addEventListener('change',()=>{save('wayne-appearance',appearanceSelect.value);document.documentElement.dataset.appearance=appearanceSelect.value;});
 window.addEventListener('languagechange',()=>{if(languageSelect.value==='auto')i18n.apply('auto');});
