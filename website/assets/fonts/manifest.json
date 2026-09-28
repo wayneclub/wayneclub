@@ -1,0 +1,17 @@
+[
+  {
+    "name": "@fontsource-variable/inter",
+    "version": "5.3.0",
+    "license": "OFL-1.1"
+  },
+  {
+    "name": "@fontsource-variable/noto-sans-tc",
+    "version": "5.3.0",
+    "license": "OFL-1.1"
+  },
+  {
+    "name": "@fontsource-variable/noto-sans-sc",
+    "version": "5.3.0",
+    "license": "OFL-1.1"
+  }
+]

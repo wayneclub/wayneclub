@@ -70,7 +70,7 @@ document.querySelectorAll('.project,.identity').forEach(card=>{
   });
   card.addEventListener('pointerleave',()=>{card.style.removeProperty('transform');card.style.removeProperty('--pointer-x');card.style.removeProperty('--pointer-y');});
 });
-motion.addEventListener('change',()=>document.querySelector('.identity').style.removeProperty('transform'));
+motion.addEventListener('change',()=>document.querySelector('.identity')?.style.removeProperty('transform'));
 let scrollPending=false;
 function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;document.querySelector('.reading-progress').style.transform=`scaleX(${max>0?scrollY/max:0})`;document.querySelector('.nav').classList.toggle('scrolled',scrollY>30);scrollPending=false;}
 window.addEventListener('scroll',()=>{if(!scrollPending){scrollPending=true;requestAnimationFrame(updateProgress);}},{passive:true});window.addEventListener('resize',updateProgress);updateProgress();

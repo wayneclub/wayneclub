@@ -1,6 +1,7 @@
 'use strict';
 // Each row: English source, Traditional Chinese, Simplified Chinese.
 const translations = [
+['Choose language','選擇語言','选择语言'],
 ['Change glass lighting','切換玻璃光線','切换玻璃光线'],
 ['Move to explore · Click to shift light','移動探索 · 點擊切換光線','移动探索 · 点击切换光线'],
 ["Privacy & analytics", "隱私與分析", "隐私与分析"],
