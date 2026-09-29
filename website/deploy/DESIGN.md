@@ -1,29 +1,37 @@
-# Clear glass visual direction
+# "Now Playing" — Wayne Club visual direction (2026-09-29)
 
-The September 28 revision replaces the warm layer with `assets/clear.css`.
-The subsequent typography revision adds `assets/type.css` and removes the
-large hero logo object. The logo is retained in the navigation, footer and icons.
-The existing `warm.css` is retained for history but is no longer loaded.
+Concept: most of Wayne's public work is about making content cross languages
+(Subtitle-Downloader, Subtitle-Tool, Apple-Dictionary, Plex-Metadata). The site
+is framed as a liquid-glass media player: "Every system has a story. I write the
+subtitles." Chapters replace plain sections.
 
-- Neutral white and cool gray surfaces; restrained blue reflections.
-- Original Wayne Club Sketch logo remains unchanged.
-- The hero now uses typography and whitespace instead of a logo sculpture.
-- A dedicated globe button in the navigation opens the three-language selector;
-  selection uses the existing persisted language and analytics change handlers.
-- Inter Variable, Noto Sans TC Variable and Noto Sans SC Variable are self-hosted
-  with `font-display: swap`, unicode-range subsets and system sans-serif fallback.
-  Package versions and OFL licenses are retained under `assets/fonts/`.
-- No continuous animation, external stock-photo dependency or third-party
-  interactive script. Reduced motion disables pointer perspective; reduced
-  transparency uses opaque surfaces.
-- Glass controls sit above simple content; project cards and typography remain
-  readable in both appearances. Social sharing imagery uses the same palette.
+- **Hero stage** — drifting multilingual subtitle tracks (SRT timecodes) under a
+  draggable glass lens. The lens, navigation and dock use real refraction:
+  `app.js` generates a displacement map per element (rounded-rect SDF, bezel
+  pushed along the surface normal) and applies it through an SVG filter in
+  `backdrop-filter`. Only Chromium renders SVG filters there; other browsers
+  get blur + saturate. The lens drifts when idle, and moves with arrow keys.
+- **Dock** — a fixed glass chapter scrubber (Intro, Work, Episodes, About,
+  Credits) with a timecode; its play/pause button pauses every animation
+  (WCAG 2.2.2). Reduced-motion users start paused.
+- **Chapter 01 · Library** — bento grid of working miniatures: subtitle track
+  switcher, dictionary lookup with speech synthesis, Simplified→Traditional
+  (Taiwan phrasing) converter, a PassBar evidence question, a SpellHop word
+  game, Mieru aspect highlighting, Plex poster fetch and a route map.
+- **Chapter 02 · Episodes** — career as episodes with a runtime bar.
+- **Chapter 03 · Glossary** — "Wayne Wei" as a dictionary entry.
+- **Chapter 04 · Credits** — contact card with a rolling credits panel.
+- Palette: bright cool white with static blue/violet/mint/pink light fields;
+  no yellow. Dark mode is near-black with the same hues dimmed.
+- Performance: the background does not animate (animated backdrops force every
+  glass pane to re-blur each frame). Demo loops run only while on screen.
+- Language: the CC button opens "Subtitles & language". Text marked
+  `translate="no"` (native language names, demo subtitles, stage words) is
+  skipped by both `i18n.js` and `scripts/build-pages.py`.
 
-References researched (not redistributed assets):
-- Apple Materials: https://developer.apple.com/design/human-interface-guidelines/materials
-- Apple Meet Liquid Glass: https://developer.apple.com/videos/play/wwdc2025/219/
-- Prism/light photographic reference: https://unsplash.com/photos/a-prism-refracts-light-into-a-rainbow-spectrum-a18lCneoV4E
+Files: `src/index.html`, `assets/theme.css`, `assets/app.js`, `assets/i18n.js`.
+Older stylesheets (`portfolio.css`, `native.css`, `monochrome.css`, `clear.css`,
+`type.css`, `warm.css`) and scripts (`portfolio.js`, `language-menu.js`,
+`glass.js`) are no longer loaded.
 
-There are no hero images. The previous `glass.js` is retained in source history
-but is not loaded. Font files can be refreshed using `scripts/vendor-fonts.cjs`
-with a directory containing the three Fontsource variable-font packages.
+References: Apple HIG Materials, WWDC25 "Meet Liquid Glass".

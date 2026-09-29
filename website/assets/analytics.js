@@ -39,7 +39,7 @@
   document.querySelectorAll('[data-consent]').forEach(b=>b.addEventListener('click',()=>remember(b.dataset.consent)));
   if(configured){if(choice==='granted')enable();else if(choice!=='denied')document.querySelector('.consent-banner').hidden=false;}
   const track=(name,params={})=>{if(active)gtag('event',name,{...params,language:document.documentElement.lang});};
-  document.querySelectorAll('.project').forEach((card,index)=>card.addEventListener('click',()=>track('project_open',{project_index:index+1})));
+  document.querySelectorAll('.project-open').forEach((button,index)=>button.addEventListener('click',()=>track('project_open',{project_index:index+1})));
   document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>track('project_filter',{category:b.dataset.filter})));
   document.querySelectorAll('a[href$=".pdf"]').forEach(a=>a.addEventListener('click',()=>track('resume_download')));
   document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',()=>track('contact_click')));

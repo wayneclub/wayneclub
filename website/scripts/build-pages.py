@@ -10,17 +10,22 @@ translations={row[0]:row for row in rows}
 BASE='https://wayneclub.com'
 variants=[('en','/',0,'en_US'),('en','/en/',0,'en_US'),('zh-Hant','/zh-hant/',1,'zh_TW'),('zh-Hans','/zh-hans/',2,'zh_CN')]
 DESC=['Ting-Long (Wayne) Wei. Backend software engineer building reliable systems, AI-powered services, and open-source tools.','Ting-Long（Wayne）Wei，專注可靠系統、AI 服務與開源工具的後端軟體工程師。','Ting-Long（Wayne）Wei，专注可靠系统、AI 服务与开源工具的后端软件工程师。']
+VOID={'meta','link','img','input','br','hr','source','area','base','col','embed','param','track','wbr'}
 class Localize(HTMLParser):
- def __init__(self,index):super().__init__(convert_charrefs=False);self.index=index;self.out=[];self.skip=0
+ def __init__(self,index):super().__init__(convert_charrefs=False);self.index=index;self.out=[];self.skip=0;self.stack=[]
  def handle_starttag(self,tag,attrs):
   raw=self.get_starttag_text()
   for a,v in attrs:
    if a in ['aria-label','alt'] and v in translations:raw=raw.replace(escape(v,quote=True),escape(translations[v][self.index],quote=True))
   self.out.append(raw)
-  if tag in ['script','style']:self.skip+=1
+  if tag in VOID:return
+  keep=tag in ['script','style'] or ('translate','no') in attrs
+  self.stack.append(keep)
+  if keep:self.skip+=1
  def handle_endtag(self,tag):
   self.out.append(f'</{tag}>')
-  if tag in ['script','style']:self.skip-=1
+  if tag in VOID or not self.stack:return
+  if self.stack.pop():self.skip-=1
  def handle_data(self,data):
   key=data.strip();self.out.append(data.replace(key,escape(translations[key][self.index])) if not self.skip and key in translations else data)
  def handle_entityref(self,name):self.out.append('&'+name+';')

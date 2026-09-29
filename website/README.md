@@ -6,16 +6,16 @@ A static portfolio inspired by Apple's native app materials and controls. No app
 
 ## Features
 
-- English, Traditional Chinese, Simplified Chinese. Device preference uses `navigator.languages` in order; explicit script subtags take precedence, TW/HK/MO map to Traditional Chinese, other Chinese locales to Simplified Chinese, unsupported languages fall back to English.
-- Language and light/dark appearance settings, saved locally; Automatic returns to browser/system preferences. Storage-disabled browsing remains functional.
-- Project filters and native dialog detail sheets, expandable achievements, email clipboard action, pointer lighting, restrained card tilt, section highlighting and reading progress.
-- Keyboard navigation, Escape dismissal, native dialog focus management, reduced-motion/reduced-transparency/high-contrast media queries, and responsive safe-area-aware sheets.
+- "Now Playing" liquid-glass theme (see `deploy/DESIGN.md`): refractive glass lens, navigation and chapter dock; eight interactive project miniatures; career episodes; dictionary-style about; rolling credits.
+- English, Traditional Chinese, Simplified Chinese. Device preference uses `navigator.languages` in order; explicit script subtags take precedence, TW/HK/MO map to Traditional Chinese, other Chinese locales to Simplified Chinese, unsupported languages fall back to English. The CC button offers each language or Automatic.
+- Appearance button cycles Automatic / Light / Dark; choices are saved locally. Storage-disabled browsing remains functional.
+- Play/pause for all motion; reduced motion starts paused. Reduced transparency and forced colors are supported. Keyboard: sheets, filters, disclosures, demos and the lens (arrow keys).
 
 ## Content
 
-Career information follows the user-provided `Ting-Long Wei_Resume.pdf`. Project descriptions are based on public GitHub repositories. The older GitHub resume differs from this PDF and is not used for career claims. LinkedIn is linked, not scraped. The English PDF is provided as-is; page content supports all three languages. The logo and wordmark are exported directly from the owner's Wayne Club.sketch vector paths, preserving Bézier curves and source transformations. Browser SVG/PNG/ICO favicons and the 180px iOS touch icon use that original mark. The theme is neutral black, white and gray.
+Career information follows the user-provided `Ting-Long Wei_Resume.pdf`. Project descriptions are based on public GitHub repositories. The older GitHub resume differs from this PDF and is not used for career claims. LinkedIn is linked, not scraped. The English PDF is provided as-is; page content supports all three languages. The logo and wordmark are exported directly from the owner's Wayne Club.sketch vector paths, preserving Bézier curves and source transformations. Browser SVG/PNG/ICO favicons and the 180px iOS touch icon use that original mark. 
 
-Edit `src/index.html` for structure/English content, `assets/i18n.js` for translations, `assets/portfolio.css`, `assets/native.css` and `assets/monochrome.css` for styles. `assets/preferences.js` resolves preferences before first paint.
+Edit `src/index.html` for structure/English content, `assets/i18n.js` for translations, `assets/theme.css` for styles and `assets/app.js` for interactions, then run `npm run build`. `assets/preferences.js` resolves preferences before first paint.
 
 ## Local preview and verification
 
