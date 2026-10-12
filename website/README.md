@@ -33,18 +33,21 @@ Tests run against `http://127.0.0.1:18940` by default. Override `BASE_URL` to ve
 
 GitHub Actions runs the checks above and publishes `ghcr.io/wayneclub/wayneclub`.
 The production host runs that image through `/home/ubuntu/docker/docker-compose.yml`;
-Watchtower is allowed to update the labeled website container after a published
-image is available. The image contains only the generated static website and its
-Nginx security configuration.
+Watchtower updates the labeled website container after a published image is
+available. The image contains only the generated static website and its Nginx
+security configuration. The production host does not serve the repository's
+`website/` directory or mount the website source into Nginx.
 
 VPN/subscription runtime files are kept outside GitHub at
-`/home/ubuntu/apps/wayneclub-website/runtime/public` and mounted into the
+`/home/ubuntu/appdata/wayneclub-runtime/public` and mounted into the
 container individually. They are not part of the website source image and are
 not mixed with the public site build.
 
 Deployments are therefore source-controlled in GitHub and reproducible from the
 Dockerfile. Do not copy files into a separate `/home/ubuntu/website` web root or
-create manual website backups; use Git history and GHCR image tags for rollback.
+run a host web server from the source checkout; use the Docker image instead.
+Do not create manual website backups; use Git history and GHCR image tags for
+rollback.
 
 ## References
 
