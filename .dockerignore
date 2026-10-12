@@ -1,0 +1,9 @@
+.git
+.github
+website/node_modules
+website/tests
+website/deploy/DESIGN.md
+website/deploy/SECURITY.md
+website/deploy/cloudflare-rules.json
+runtime
+design-assets
