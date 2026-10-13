@@ -6,7 +6,13 @@ for path in [r/'index.html',r/'en/index.html',r/'zh-hant/index.html',r/'zh-hans/
  for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>',path.read_text(),re.S):hashes.add("'sha256-"+base64.b64encode(hashlib.sha256(s.encode()).digest()).decode()+"'")
 csp="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com/analytics.js "+' '.join(sorted(hashes))+"; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests"
 config='''# Only the Wayne Club static site; does not modify other proxy hosts.
-limit_req_zone $binary_remote_addr zone=wayne_requests:10m rate=10r/s;
+# Font subsets are static and one Chinese page needs dozens of them; an empty
+# key leaves them out of the request rate limit (the connection limit still applies).
+map $uri $wayne_request_key {
+    ~^/assets/fonts/ "";
+    default $binary_remote_addr;
+}
+limit_req_zone $wayne_request_key zone=wayne_requests:10m rate=10r/s;
 limit_conn_zone $binary_remote_addr zone=wayne_connections:10m;
 server {
     listen 80;
