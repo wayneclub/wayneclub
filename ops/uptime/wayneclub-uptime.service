@@ -1,0 +1,16 @@
+[Unit]
+Description=Wayne Club external HTTPS uptime check
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+EnvironmentFile=/home/ubuntu/wayneclub-uptime/telegram.env
+ExecStart=/usr/bin/python3 /home/ubuntu/wayneclub-uptime/monitor.py
+StateDirectory=wayneclub-uptime
+TimeoutStartSec=40
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
