@@ -18,7 +18,7 @@ GA4 stream: `G-TV15PT58R3`. No Google script loads before visitor opt-in. Advert
 
 Custom events: `page_view`, `project_open`, `project_filter`, `resume_download`, `contact_click`, `email_copy`, `language_change`, `appearance_change`. Page locations exclude query strings and fragments; referrers are reduced to origin. Custom event payloads do not include email addresses or form contents. Admin-side enhanced-measurement/key-event settings are not managed by this repository. The production page_view endpoint returned 204 for the supplied measurement ID.
 
-Cloudflare may inject its own analytics beacon; the site's CSP intentionally does not allow that optional script, so it can appear as a blocked console resource. This does not block GA4 or portfolio features.
+Cloudflare Web Analytics is allowed for cookie-free page-performance measurement, independently of GA4 consent. CSP permits only https://static.cloudflareinsights.com for its script and https://cloudflareinsights.com for its external collection endpoint; proxied collection at /cdn-cgi/rum is covered by self. The privacy dialog discloses this measurement in all three languages.
 
 ## Active Cloudflare controls (2026-09-26)
 

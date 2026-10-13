@@ -117,6 +117,7 @@ const translations = [
 ['Language and appearance preferences are stored only on this device.','語言與外觀偏好只會儲存在這台裝置上。','语言与外观偏好只会保存在这台设备上。'],
 ['With your permission, Google Analytics measures page visits and portfolio interactions. Advertising features are disabled. Query strings, email addresses and form contents are not sent as event data.','經你同意後，Google Analytics 會統計頁面造訪與作品互動。廣告功能已停用，查詢字串、電子郵件與表單內容都不會作為事件資料傳送。','经你同意后，Google Analytics 会统计页面访问与作品互动。广告功能已停用，查询字符串、电子邮件与表单内容都不会作为事件数据发送。'],
 ['This website has no contact form. Email links open your email application. The hosting and security providers may process technical request logs for delivery and abuse prevention.','本網站沒有聯絡表單，電子郵件連結會開啟你的郵件 App。主機與資安服務商可能為了傳送與防止濫用而處理技術請求紀錄。','本网站没有联系表单，电子邮件链接会打开你的邮件 App。主机与安全服务商可能为了传输与防止滥用而处理技术请求日志。'],
+['Cloudflare Web Analytics measures page performance without cookies or local storage, independently of the Google Analytics choice.','Cloudflare Web Analytics 不使用 Cookie 或本機儲存空間來測量頁面效能，此功能獨立於 Google Analytics 的同意選項。','Cloudflare Web Analytics 不使用 Cookie 或本地存储来测量页面性能，此功能独立于 Google Analytics 的同意选项。'],
 ['Analytics cookies','分析 Cookie','分析 Cookie'],['Do not allow','不允許','不允许'],['Allow analytics','允許分析','允许分析'],
 ['Analytics is not currently enabled.','目前未啟用分析功能。','目前未启用分析功能。'],['You can change this choice at any time.','你可以隨時變更這個選擇。','你可以随时更改这个选择。'],
 ['Analytics choice','分析選項','分析选项'],['Allow optional analytics to help improve Wayne Club?','允許選用的分析功能，幫助改善 Wayne Club 嗎？','允许可选的分析功能，帮助改进 Wayne Club 吗？'],['No thanks','不用了','不用了'],
