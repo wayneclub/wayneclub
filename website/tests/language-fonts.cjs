@@ -12,7 +12,7 @@ const base = process.env.BASE_URL || 'http://127.0.0.1:18940';
     await page.goto(base, {waitUntil:'networkidle'});
     await page.locator('[data-consent=denied]').click();
     assert.equal(await page.locator('.glass-object').count(),0);
-    for (const [lang,code,font] of [['en','EN','Inter Variable'],['zh-Hans','简','Noto Sans SC Variable'],['zh-Hant','繁','Noto Sans TC Variable']]) {
+    for (const [lang,code,font] of [['en','EN','Geist Variable'],['zh-Hans','简','Noto Sans SC Variable'],['zh-Hant','繁','Noto Sans TC Variable']]) {
       await page.locator('.language-button').focus();
       await page.keyboard.press('Enter');
       await page.locator(`[data-language="${lang}"]`).click();

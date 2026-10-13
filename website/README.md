@@ -6,7 +6,7 @@ A static portfolio inspired by Apple's native app materials and controls. No app
 
 ## Features
 
-- "Now Playing" liquid-glass theme (see `deploy/DESIGN.md`): refractive glass lens, navigation and chapter dock; eight interactive project miniatures; career episodes; dictionary-style about; rolling credits.
+- "Now Playing" theme in a Japanese minimal palette, sumi ink on washi with a wood accent (see `deploy/DESIGN.md`): refractive glass lens, navigation and chapter dock; eight interactive project miniatures; career episodes; dictionary-style about; rolling credits.
 - English, Traditional Chinese, Simplified Chinese. Device preference uses `navigator.languages` in order; explicit script subtags take precedence, TW/HK/MO map to Traditional Chinese, other Chinese locales to Simplified Chinese, unsupported languages fall back to English. The CC button offers each language or Automatic.
 - Appearance button cycles Automatic / Light / Dark; choices are saved locally. Storage-disabled browsing remains functional.
 - Play/pause for all motion; reduced motion starts paused. Reduced transparency and forced colors are supported. Keyboard: sheets, filters, disclosures, demos and the lens (arrow keys).

@@ -1,7 +1,7 @@
 'use strict';
 // Each row: English source, Traditional Chinese (Taiwan), Simplified Chinese.
 const translations = [
-['Wayne Club — Wayne Wei','Wayne Club — Wayne Wei','Wayne Club — Wayne Wei'],
+['Wayne Club | Wayne Wei','Wayne Club | Wayne Wei','Wayne Club | Wayne Wei'],
 ['Ting-Long (Wayne) Wei. Backend software engineer building reliable systems, AI-powered services, and open-source tools.','Ting-Long（Wayne）Wei，專注可靠系統、AI 服務與開源工具的後端軟體工程師。','Ting-Long（Wayne）Wei，专注可靠系统、AI 服务与开源工具的后端软件工程师。'],
 ['Skip to content','跳到主要內容','跳到主要内容'],
 ['Wayne Club home','Wayne Club 首頁','Wayne Club 首页'],
@@ -10,10 +10,10 @@ const translations = [
 ['Choose language','選擇語言','选择语言'],
 ['Appearance: Automatic','外觀：自動','外观：自动'],['Appearance: Light','外觀：淺色','外观：浅色'],['Appearance: Dark','外觀：深色','外观：深色'],
 ['Let’s talk','聊聊','聊聊'],
-['NOW PLAYING · WAYNE CLUB','正在播放 · WAYNE CLUB','正在播放 · WAYNE CLUB'],
+['Now playing','正在播放','正在播放'],
 ['Every system has a story.','每個系統都有故事，','每个系统都有故事，'],
 ['I write the subtitles.','我負責寫字幕。','我负责写字幕。'],
-['I’m Wayne Wei, a backend engineer who makes complex things readable: banking platforms for 2M+ users, AI services in production, and open-source tools with 690+ GitHub stars.','我是 Wayne Wei，一位把複雜變得好懂的後端工程師：服務兩百萬以上用戶的銀行平台、上線運作的 AI 服務，以及累積 690+ GitHub 星標的開源工具。','我是 Wayne Wei，一位把复杂变得好懂的后端工程师：服务两百万以上用户的银行平台、上线运行的 AI 服务，以及累计 690+ GitHub 星标的开源工具。'],
+['I’m Wayne Wei, a backend engineer. Banking platforms for 2M+ users, production AI services, and open source with 690+ stars.','我是 Wayne Wei，後端工程師。打造服務兩百萬以上用戶的銀行平台、上線運作的 AI 服務，開源專案累積 690+ 星標。','我是 Wayne Wei，后端工程师。打造服务两百万以上用户的银行平台、上线运行的 AI 服务，开源项目累计 690+ 星标。'],
 ['Browse the library','瀏覽作品庫','浏览作品库'],['View résumé','查看履歷','查看简历'],
 ['Interactive glass lens over multilingual subtitles','多語字幕上的互動玻璃透鏡','多语字幕上的互动玻璃透镜'],
 ['Glass lens. Drag it, or use the arrow keys to move it.','玻璃透鏡。可拖曳，或用方向鍵移動。','玻璃透镜。可拖动，或用方向键移动。'],
@@ -24,9 +24,8 @@ const translations = [
 ['users on banking systems supported','銀行系統服務用戶','银行系统服务用户'],
 ['GitHub stars across open source','開源專案 GitHub 星標','开源项目 GitHub 星标'],
 ['lower integration maintenance costs','整合維護成本降低','集成维护成本降低'],
-['CHAPTER 01 · THE LIBRARY','第一章 · 作品庫','第一章 · 作品库'],
 ['Small frictions,','日常的小不順，','日常的小不顺，'],['fixed in public.','公開地修好它。','公开地修好它。'],
-['Every project here began as something that felt harder than it should. Play with them — each card is a working miniature.','這裡的每個作品，都從「這件事不該這麼難」開始。動手玩玩看，每張卡片都是能操作的迷你版本。','这里的每个作品，都从「这件事不该这么难」开始。动手玩玩看，每张卡片都是能操作的迷你版本。'],
+['Every project here began as something that felt harder than it should. Each card is a working miniature.','這裡的每個作品，都從「這件事不該這麼難」開始。每張卡片都是能操作的迷你版本。','这里的每个作品，都从「这件事不该这么难」开始。每张卡片都是能操作的迷你版本。'],
 ['Filter projects','篩選作品','筛选作品'],
 ['All','全部','全部'],['Media & language','媒體與語言','媒体与语言'],['Learning & play','學習與遊戲','学习与游戏'],['Data & insight','資料與洞察','数据与洞察'],
 ['MEDIA · PYTHON','媒體 · PYTHON','媒体 · PYTHON'],['LANGUAGE · MACOS','語言 · MACOS','语言 · MACOS'],['LANGUAGE · PYTHON','語言 · PYTHON','语言 · PYTHON'],['LEARNING · TYPESCRIPT','學習 · TYPESCRIPT','学习 · TYPESCRIPT'],['PLAY · GAME','遊戲 · GAME','游戏 · GAME'],['INSIGHT · NLP','洞察 · NLP','洞察 · NLP'],['DATA VIZ','資料視覺化','数据可视化'],
@@ -51,7 +50,7 @@ const translations = [
 ['Tutor mode · Evidence','導學模式 · 證據法','导学模式 · 证据法'],['Learning','學習','学习'],
 ['Build question sets by subject, practise in tutor mode with instant explanations, or simulate exam pressure with timed sessions.','依科目建立題組，在導學模式中即時看詳解，或用計時模式模擬考場壓力。','按科目建立题组，在导学模式中即时看详解，或用计时模式模拟考场压力。'],
 ['Reviews focus on the reasoning behind each answer, not just the score.','複習重點放在每個答案背後的推理，而不只是分數。','复习重点放在每个答案背后的推理，而不只是分数。'],
-['Correct. Under FRE 801–802, hearsay is inadmissible unless an exclusion or exception applies.','答對了。依《聯邦證據規則》801–802 條，傳聞證據除非符合除外或例外規定，否則不得採用。','答对了。依《联邦证据规则》801–802 条，传闻证据除非符合排除或例外规定，否则不得采用。'],
+['Correct. Under FRE 801-802, hearsay is inadmissible unless an exclusion or exception applies.','答對了。依《聯邦證據規則》801-802 條，傳聞證據除非符合除外或例外規定，否則不得採用。','答对了。依《联邦证据规则》801-802 条，传闻证据除非符合排除或例外规定，否则不得采用。'],
 ['Not quite. Ask what the statement is being offered to prove.','差一點。想想這段陳述是被拿來證明什麼。','差一点。想想这段陈述是被拿来证明什么。'],
 ['2D platformer','2D 平台遊戲','2D 平台游戏'],
 ['Jump, collect letter blocks, then spell the four-letter word to cross the river. Three misses and it restarts.','跳躍收集字母方塊，拼出四個字母的單字才能過河；猜錯三次就重新開始。','跳跃收集字母方块，拼出四个字母的单词才能过河；猜错三次就重新开始。'],
@@ -78,14 +77,13 @@ const translations = [
 ['Aspect-based restaurant recommendations','依評論面向推薦餐廳','按评论维度推荐餐厅'],
 ['SpellHop, rebuilt in Unity','用 Unity 重新打造的 SpellHop','用 Unity 重新打造的 SpellHop'],
 ['More on GitHub','GitHub 上的更多作品','GitHub 上的更多作品'],['All repositories ↗','所有儲存庫 ↗','所有仓库 ↗'],
-['CHAPTER 02 · EPISODES','第二章 · 劇集','第二章 · 剧集'],
 ['Built for people,','為人而做，','为人而做，'],['proven at scale.','在真實規模中淬鍊。','在真实规模中淬炼。'],
 ['From banking at scale to production AI, one episode at a time.','從大規模銀行系統到上線的 AI 服務，一集一集走來。','从大规模银行系统到上线的 AI 服务，一集一集走来。'],
 ['users','用戶','用户'],['lower cost','成本降低','成本降低'],['faster','更快','更快'],
-['E01 · JAN 2018 — MAR 2020 · TAIPEI','E01 · 2018 年 1 月 — 2020 年 3 月 · 台北','E01 · 2018 年 1 月 — 2020 年 3 月 · 台北'],
-['E02 · APR 2020 — JUL 2024 · TAIPEI','E02 · 2020 年 4 月 — 2024 年 7 月 · 台北','E02 · 2020 年 4 月 — 2024 年 7 月 · 台北'],
-['E03 · JUN — AUG 2021 · TAIPEI','E03 · 2021 年 6 月 — 8 月 · 台北','E03 · 2021 年 6 月 — 8 月 · 台北'],
-['E04 · 2024 — 2026 · LOS ANGELES','E04 · 2024 — 2026 · 洛杉磯','E04 · 2024 — 2026 · 洛杉矶'],
+['Jan 2018 - Mar 2020 · Taipei','2018 年 1 月 - 2020 年 3 月 · 台北','2018 年 1 月 - 2020 年 3 月 · 台北'],
+['Apr 2020 - Jul 2024 · Taipei','2020 年 4 月 - 2024 年 7 月 · 台北','2020 年 4 月 - 2024 年 7 月 · 台北'],
+['Jun - Aug 2021 · Taipei','2021 年 6 月 - 8 月 · 台北','2021 年 6 月 - 8 月 · 台北'],
+['2024 - 2026 · Los Angeles','2024 - 2026 · 洛杉磯','2024 - 2026 · 洛杉矶'],
 ['E.SUN Bank','玉山銀行','玉山银行'],['Software Engineer','軟體工程師','软件工程师'],
 ['Collaborated with IBM on online banking for over 2 million users. Built payment integrations and a modular Web ATM CMS, and led a six-person team on a shared foreign exchange platform.','與 IBM 合作開發服務逾兩百萬用戶的網路銀行；建置金流串接與模組化 Web ATM 內容管理系統，並帶領六人團隊打造共用外匯平台。','与 IBM 合作开发服务逾两百万用户的网上银行；建设支付对接与模块化 Web ATM 内容管理系统，并带领六人团队打造共享外汇平台。'],
 ['less development time for new systems','新系統開發時間縮短','新系统开发时间缩短'],['6 months','6 個月','6 个月'],['faster forex platform launch','外匯平台提前上線','外汇平台提前上线'],
@@ -99,7 +97,6 @@ const translations = [
 ['Graduate study in machine learning, deep learning and natural language processing, applied to projects like Mieru and SpotLite.','研究所主修機器學習、深度學習與自然語言處理，並應用在 Mieru、SpotLite 等專案。','研究生阶段主修机器学习、深度学习与自然语言处理，并应用在 Mieru、SpotLite 等项目。'],
 ['Machine Learning · Deep Learning','機器學習 · 深度學習','机器学习 · 深度学习'],['Natural Language Processing','自然語言處理','自然语言处理'],['Research','研究','研究'],
 ['Show achievements','查看成果','查看成果'],['Hide achievements','收起成果','收起成果'],
-['CHAPTER 03 · GLOSSARY','第三章 · 詞條','第三章 · 词条'],
 ['Always curious,','永遠好奇，','永远好奇，'],['always building.','一直在做。','一直在做。'],
 ['noun','名詞','名词'],['Pronounce Wayne Wei','朗讀 Wayne Wei','朗读 Wayne Wei'],
 ['A backend engineer who turns complex systems into dependable, readable software.','把複雜系統變成可靠、好懂的軟體的後端工程師。','把复杂系统变成可靠、好懂的软件的后端工程师。'],
@@ -108,13 +105,12 @@ const translations = [
 ['The person behind Wayne Club: open-source projects, a homelab and far too many subtitle files.','Wayne Club 的主人：開源專案、一座家用伺服器，還有多到不行的字幕檔。','Wayne Club 的主人：开源项目、一台家用服务器，还有多到不行的字幕文件。'],
 ['SEE ALSO','參見','参见'],['builder · translator · tinkerer','創造者 · 翻譯者 · 愛動手的人','创造者 · 翻译者 · 爱动手的人'],
 ['Backend & AI','後端與 AI','后端与 AI'],['LLM integration','LLM 整合','LLM 集成'],['Data & Cloud','資料與雲端','数据与云'],['Apps & Interfaces','App 與介面','App 与界面'],
-['2024 — 2026 · Machine Learning · Deep Learning · Natural Language Processing','2024 — 2026 · 機器學習 · 深度學習 · 自然語言處理','2024 — 2026 · 机器学习 · 深度学习 · 自然语言处理'],
+['2024 - 2026 · Machine Learning, Deep Learning, NLP','2024 - 2026 · 機器學習、深度學習、自然語言處理','2024 - 2026 · 机器学习、深度学习、自然语言处理'],
 ['BS, Computer Science & Information Engineering','資訊工程學士','计算机科学与信息工程学士'],['National Cheng Kung University','國立成功大學','台湾成功大学'],
-['CHAPTER 04 · CREDITS','第四章 · 片尾名單','第四章 · 片尾字幕'],
 ['Have something','有想一起','有想一起'],['worth building?','打造的東西嗎？','打造的东西吗？'],
 ['Backend systems, AI services or a tool that should exist. I’d love to hear about it.','後端系統、AI 服務，或一個早該存在的工具，都很歡迎聊聊。','后端系统、AI 服务，或一个早该存在的工具，都很欢迎聊聊。'],
 ['Copy email address','複製電子郵件','复制电子邮件'],['Email address copied','已複製電子郵件','已复制电子邮件'],['Could not copy. Please use the email link.','無法複製，請使用電子郵件連結。','无法复制，请使用电子邮件链接。'],
-['Credits','片尾名單','片尾字幕'],['Directed by','導演','导演'],['Backend','後端','后端'],['Infrastructure','基礎架構','基础架构'],['Subtitles','字幕','字幕'],['Filmed in','拍攝地點','拍摄地点'],['Taipei · Los Angeles','台北 · 洛杉磯','台北 · 洛杉矶'],['Glass','玻璃特效','玻璃特效'],['CSS backdrop-filter & SVG displacement','CSS backdrop-filter 與 SVG 位移濾鏡','CSS backdrop-filter 与 SVG 位移滤镜'],['Special thanks','特別感謝','特别感谢'],['Everyone who starred a repository','每一位按下星標的你','每一位点亮星标的你'],
+['Credits','片尾名單','片尾字幕'],['Directed by','導演','导演'],['Backend','後端','后端'],['Infrastructure','基礎架構','基础架构'],['Subtitles','字幕','字幕'],['Filmed in','拍攝地點','拍摄地点'],['Taipei and Los Angeles','台北與洛杉磯','台北与洛杉矶'],['Glass','玻璃特效','玻璃特效'],['CSS backdrop-filter & SVG displacement','CSS backdrop-filter 與 SVG 位移濾鏡','CSS backdrop-filter 与 SVG 位移滤镜'],['Special thanks','特別感謝','特别感谢'],['Everyone who starred a repository','每一位按下星標的你','每一位点亮星标的你'],
 ['Languages','語言','语言'],['Privacy & analytics','隱私與分析','隐私与分析'],['Back to top ↑','回到頂端 ↑','回到顶部 ↑'],
 ['Chapters','章節','章节'],['Pause motion','暫停動態效果','暂停动态效果'],['Play motion','播放動態效果','播放动态效果'],['Intro','開場','开场'],['Episodes','劇集','剧集'],
 ['Close','關閉','关闭'],
@@ -154,7 +150,7 @@ window.wayneI18n = (() => {
     language = ['en','zh-Hant','zh-Hans'].includes(preference) ? preference : window.waynePreferences.resolveLanguage(navigator.languages || [navigator.language]);
     document.documentElement.lang = language;
     translate();
-    document.title = t('Wayne Club — Wayne Wei');
+    document.title = t('Wayne Club | Wayne Wei');
     document.querySelector('meta[name="description"]').content = t('Ting-Long (Wayne) Wei. Backend software engineer building reliable systems, AI-powered services, and open-source tools.');
     document.querySelector('meta[property="og:title"]').content = document.title;
     document.querySelector('meta[property="og:description"]').content = document.querySelector('meta[name="description"]').content;

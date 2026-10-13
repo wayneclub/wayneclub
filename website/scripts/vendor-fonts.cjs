@@ -6,7 +6,7 @@ if (!modules) throw new Error('Pass the directory containing the Fontsource pack
 const root = path.resolve(__dirname, '..');
 let css = '';
 const manifest = [];
-for (const name of ['inter', 'noto-sans-tc', 'noto-sans-sc']) {
+for (const name of ['geist', 'noto-sans-tc', 'noto-sans-sc']) {
   const source = path.join(modules, '@fontsource-variable', name);
   const target = path.join(root, 'assets/fonts', name);
   fs.mkdirSync(target, {recursive:true});

@@ -333,16 +333,6 @@ watch(stage);
 new ResizeObserver(() => { sizeLens(); buildRefraction(); }).observe(stage);
 sizeLens(); requestAnimationFrame(idle);
 
-/* ---------- Hero caption strip ---------- */
-const captions = [['EN', 'Complexity in. Clarity out.', 'en'], ['繁', '把複雜，留在背後。', 'zh-Hant'], ['简', '把复杂，留在背后。', 'zh-Hans'], ['日', '複雑さを、わかりやすく。', 'ja']];
-let captionIndex = 0;
-const capLang = $('.caption-lang'), capText = $('.caption-text');
-every(3200, () => {
-  captionIndex = (captionIndex + 1) % captions.length;
-  capText.classList.add('out');
-  setTimeout(() => { const [code, text, lang] = captions[captionIndex]; capLang.textContent = code; capText.textContent = text; capText.lang = lang; capText.classList.remove('out'); }, 320);
-});
-
 /* ---------- Metrics count-up ---------- */
 if ('IntersectionObserver' in window && !reduced.matches) {
   const counter = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -399,7 +389,7 @@ const entries = {
   idempotent: ['/ˌaɪ.dəmˈpoʊ.tənt/', 'adjective', 'Producing the same result no matter how many times it is applied.', '“Payment retries must be idempotent.”'],
   serendipity: ['/ˌser.ənˈdɪp.ə.t̬i/', 'noun', 'The fact of finding something good without looking for it.', '“Half of these tools began with serendipity.”'],
   subtitle: ['/ˈsʌbˌtaɪ.t̬əl/', 'noun', 'Words shown on screen that translate or transcribe what is being said.', '“Dual subtitles make great study partners.”'],
-  glass: ['/ɡlæs/', 'noun', 'A hard, clear material that lets light pass through — and bends it.', '“This website is mostly glass.”'],
+  glass: ['/ɡlæs/', 'noun', 'A hard, clear material that lets light pass through, and bends it.', '“This website is mostly glass.”'],
   wayne: ['/weɪn/', 'proper noun', 'An engineer who builds the tool when something feels harder than it should.', '“Ask Wayne; he probably wrote a script for that.”']
 };
 const dictDemo = $('.dict-demo'), dictInput = $('#dict-input'), dictEntry = $('.dict-entry');
@@ -408,7 +398,7 @@ function lookup(word) {
   const e = entries[key];
   dictEntry.classList.remove('flip'); void dictEntry.offsetWidth; dictEntry.classList.add('flip');
   if (!e) {
-    $('.dict-word', dictEntry).textContent = word.trim() || '—';
+    $('.dict-word', dictEntry).textContent = word.trim() || '-';
     $('.dict-ipa', dictEntry).textContent = '';
     $('.dict-def', dictEntry).textContent = i18n.t('Not in this pocket edition. Try one of the suggestions.');
     $('.dict-ex', dictEntry).textContent = ''; $('.speak', dictEntry).hidden = true; return;
@@ -461,7 +451,7 @@ $$('.quiz-options button', quiz).forEach(button => button.addEventListener('clic
   const right = button.dataset.correct === 'true';
   $$('.quiz-options button', quiz).forEach(b => b.classList.remove('wrong'));
   button.classList.add(right ? 'right' : 'wrong');
-  if (right) { answered = true; quizFeedback.textContent = i18n.t('Correct. Under FRE 801–802, hearsay is inadmissible unless an exclusion or exception applies.'); }
+  if (right) { answered = true; quizFeedback.textContent = i18n.t('Correct. Under FRE 801-802, hearsay is inadmissible unless an exclusion or exception applies.'); }
   else quizFeedback.textContent = i18n.t('Not quite. Ask what the statement is being offered to prove.');
 }));
 

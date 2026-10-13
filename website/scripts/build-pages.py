@@ -37,7 +37,7 @@ for lang,path,index,oglocale in variants:
  parser=Localize(index);parser.feed(template);s=''.join(parser.out);s=s.replace('<html lang="en">',f'<html lang="{lang}">')
  s=re.sub(r'<meta (?:name="description"|property="og:description") content="[^"]*">',lambda m:('<meta name="description"' if 'name=' in m[0] else '<meta property="og:description"')+' content="'+escape(DESC[index],quote=True)+'">',s)
  s=s.replace('rel="canonical" href="https://wayneclub.com/"',f'rel="canonical" href="{BASE+path}"').replace('property="og:url" content="https://wayneclub.com/"',f'property="og:url" content="{BASE+path}"')
- schema={'@context':'https://schema.org','@graph':[{'@type':'WebSite','@id':BASE+'/#website','url':BASE+'/','name':'Wayne Club','inLanguage':['en','zh-Hant','zh-Hans']},{'@type':'ProfilePage','@id':BASE+path+'#profile','url':BASE+path,'name':'Wayne Club — Wayne Wei','description':DESC[index],'inLanguage':lang,'isPartOf':{'@id':BASE+'/#website'},'mainEntity':{'@id':BASE+'/#person'}},{'@type':'Person','@id':BASE+'/#person','name':'Ting-Long Wei','alternateName':'Wayne Wei','url':BASE+'/','email':'me@wayneclub.com','jobTitle':'Backend Software Engineer','sameAs':['https://github.com/wayneclub','https://www.linkedin.com/in/mrwwei/'],'alumniOf':[{'@type':'CollegeOrUniversity','name':'University of Southern California'},{'@type':'CollegeOrUniversity','name':'National Cheng Kung University'}],'knowsAbout':['Backend engineering','Python','Java','Cloud infrastructure','AI service integration']} ]}
+ schema={'@context':'https://schema.org','@graph':[{'@type':'WebSite','@id':BASE+'/#website','url':BASE+'/','name':'Wayne Club','inLanguage':['en','zh-Hant','zh-Hans']},{'@type':'ProfilePage','@id':BASE+path+'#profile','url':BASE+path,'name':'Wayne Club | Wayne Wei','description':DESC[index],'inLanguage':lang,'isPartOf':{'@id':BASE+'/#website'},'mainEntity':{'@id':BASE+'/#person'}},{'@type':'Person','@id':BASE+'/#person','name':'Ting-Long Wei','alternateName':'Wayne Wei','url':BASE+'/','email':'me@wayneclub.com','jobTitle':'Backend Software Engineer','sameAs':['https://github.com/wayneclub','https://www.linkedin.com/in/mrwwei/'],'alumniOf':[{'@type':'CollegeOrUniversity','name':'University of Southern California'},{'@type':'CollegeOrUniversity','name':'National Cheng Kung University'}],'knowsAbout':['Backend engineering','Python','Java','Cloud infrastructure','AI service integration']} ]}
  metadata='\n<meta name="robots" content="index,follow,max-image-preview:large">\n'
  for code,url in [('en','/en/'),('zh-Hant','/zh-hant/'),('zh-Hans','/zh-hans/'),('x-default','/')]:metadata+=f'<link rel="alternate" hreflang="{code}" href="{BASE+url}">\n'
  metadata+=f'<meta property="og:locale" content="{oglocale}">\n'
@@ -46,8 +46,8 @@ for lang,path,index,oglocale in variants:
  metadata+='''<meta property="og:image" content="https://wayneclub.com/assets/wayne-club-social.png">
 <meta property="og:image:secure_url" content="https://wayneclub.com/assets/wayne-club-social.png">
 <meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Wayne Club — Wayne Wei. Backend engineering, thoughtfully built.">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Wayne Club — Wayne Wei">
+<meta property="og:image:alt" content="Wayne Club | Wayne Wei. Backend engineering, thoughtfully built.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Wayne Club | Wayne Wei">
 <meta name="twitter:image" content="https://wayneclub.com/assets/wayne-club-social.png">
 '''
  metadata+=f'<meta name="twitter:description" content="{escape(DESC[index],quote=True)}">\n<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</','<\\/')+'</script>\n'
